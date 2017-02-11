@@ -1,5 +1,5 @@
 {
-    "memo": "",
+    "memo": "ffd1f6e1d4543bdd203caf5e1cdf7b5e4480cfd52c9dc6db106359ee764c3de8",
     "projects": [
         {
             "name": "github.com/GeertJohan/go-sourcepath",
@@ -22,6 +22,25 @@
             "name": "github.com/Unknwon/com",
             "branch": "master",
             "revision": "28b053d5a2923b87ce8c5a08f3af779894a72758",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/aws/aws-sdk-go",
+            "branch": "master",
+            "revision": "4590e9b51cd6698144a025a75608fa7a90752d5d",
+            "packages": [
+                "aws",
+                "aws/credentials",
+                "aws/session",
+                "service/kinesis"
+            ]
+        },
+        {
+            "name": "github.com/evalphobia/logrus_kinesis",
+            "branch": "master",
+            "revision": "3a9524d4e5540cc81c920ee17bd8ad1d47437f5d",
             "packages": [
                 "."
             ]
@@ -51,9 +70,25 @@
             ]
         },
         {
+            "name": "github.com/go-ini/ini",
+            "version": "v1.24.0",
+            "revision": "e3c2d47c61e5333f9aa2974695dd94396eb69c75",
+            "packages": [
+                "."
+            ]
+        },
+        {
             "name": "github.com/hashicorp/hcl",
             "branch": "master",
             "revision": "372e8ddaa16fd67e371e9323807d056b799360af",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/jmespath/go-jmespath",
+            "version": "0.2.2",
+            "revision": "3433f3ea46d9f8019119e7dd41274e112a2359a9",
             "packages": [
                 "."
             ]
@@ -125,7 +160,7 @@
         {
             "name": "github.com/rai-project/config",
             "branch": "master",
-            "revision": "d0140fe7a6362e22757692cc68d6da767ddb143f",
+            "revision": "f52ed1ceef260d86c450ac8699a4fb48b8be1ec7",
             "packages": [
                 "."
             ]

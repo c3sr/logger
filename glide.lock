@@ -1,6 +1,37 @@
-hash: 10bc519c7cb3fe661cb5b8036688a1c15eea6d028eecf4e65a76b7ea3706ef0a
-updated: 2017-02-11T16:43:44.549766947-06:00
+hash: 8e579e62926e67e368e6ccc7cc9fd955558189afa71ea28a90b9ee78ebf42d27
+updated: 2017-02-11T17:24:26.322900643-06:00
 imports:
+- name: github.com/aws/aws-sdk-go
+  version: f615b0905b52177eb0efa0fe59340c05c0ea0ed9
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/stscreds
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/endpoints
+  - aws/request
+  - aws/session
+  - aws/signer/v4
+  - private/protocol
+  - private/protocol/json/jsonutil
+  - private/protocol/jsonrpc
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/xml/xmlutil
+  - private/waiter
+  - service/kinesis
+  - service/sts
+- name: github.com/evalphobia/logrus_kinesis
+  version: 3a9524d4e5540cc81c920ee17bd8ad1d47437f5d
 - name: github.com/fatih/color
   version: 5ec5d9d3c2cf82e9688b34e9bc27a94d616a7193
 - name: github.com/fatih/structs
@@ -9,6 +40,8 @@ imports:
   version: fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197
 - name: github.com/GeertJohan/go-sourcepath
   version: 83e8b8723a9bf39481216e80575f4854c63ece4a
+- name: github.com/go-ini/ini
+  version: 6e4869b434bd001f6983749881c7ead3545887d8
 - name: github.com/hashicorp/hcl
   version: c3e054bfd4dcf77b9965ed2b79b22afa2f41d4eb
   subpackages:
@@ -20,6 +53,8 @@ imports:
   - json/parser
   - json/scanner
   - json/token
+- name: github.com/jmespath/go-jmespath
+  version: bd40a432e4c76585ef6b72d3fd96fb9b6dc7b68d
 - name: github.com/k0kubun/pp
   version: 027a6d1765d673d337e687394dbe780dd64e2a1e
 - name: github.com/magiconair/properties
@@ -37,7 +72,7 @@ imports:
 - name: github.com/pelletier/go-toml
   version: 45932ad32dfdd20826f5671da37a5f3ce9f26a8d
 - name: github.com/rai-project/config
-  version: d0140fe7a6362e22757692cc68d6da767ddb143f
+  version: f52ed1ceef260d86c450ac8699a4fb48b8be1ec7
 - name: github.com/rai-project/godotenv
   version: 726cc8b906e3d31c70a9671c90a13716a8d3f50d
 - name: github.com/rai-project/vipertags

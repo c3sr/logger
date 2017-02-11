@@ -13,14 +13,18 @@ type Logger struct {
 }
 
 var (
-	debug    = false
-	addhooks = true
-	std      = New()
+	debug = false
+	std   = New()
 )
 
 func setupHooks(log *Logger) {
-	if addhooks {
-		setupSyslogHook(log)
+	for _, hook := range Config.Hooks {
+		switch hook {
+		case "kenisis":
+			setupKenisisHook(log)
+		case "syslog":
+			setupSyslogHook(log)
+		}
 	}
 }
 
@@ -33,6 +37,7 @@ func init() {
 		}
 		log.SetFormatter(formatter)
 		std.Formatter = formatter
+
 		if config.IsVerbose {
 			log.SetLevel(log.DebugLevel)
 			std.Level = log.DebugLevel
@@ -43,6 +48,12 @@ func init() {
 			log.SetLevel(log.InfoLevel)
 			std.Level = log.InfoLevel
 		}
+
+		if lvl, err := log.ParseLevel(Config.Level); err == nil {
+			log.SetLevel(lvl)
+			std.Level = lvl
+		}
+
 		setupHooks(&Logger{Logger: log.StandardLogger()})
 		setupHooks(std)
 	})
