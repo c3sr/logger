@@ -33,10 +33,10 @@ func init() {
 		}
 		log.SetFormatter(formatter)
 		std.Formatter = formatter
-		if config.Mode.IsVerbose {
+		if config.IsVerbose {
 			log.SetLevel(log.DebugLevel)
 			std.Level = log.DebugLevel
-		} else if config.Mode.IsDebug {
+		} else if config.IsDebug {
 			log.SetLevel(log.DebugLevel)
 			std.Level = log.DebugLevel
 		} else {

@@ -35,7 +35,7 @@ func New() *Logger {
 		DisableTimestamp: true,
 	}
 	l.Formatter = formatter
-	if config.Mode.IsVerbose {
+	if config.IsVerbose {
 		log.SetLevel(log.DebugLevel)
 	} else {
 		log.SetLevel(log.WarnLevel)
