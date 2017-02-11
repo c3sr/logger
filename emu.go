@@ -7,7 +7,7 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/fatih/color"
 
-	"bitbucket.org/hwuligans/rai/pkg/config"
+	"github.com/rai-project/config"
 )
 
 type MutexWrap struct {
