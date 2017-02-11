@@ -1,0 +1,13 @@
+{
+    "dependencies": {
+        "github.com/Sirupsen/logrus": {
+            "branch": "master"
+        },
+        "github.com/fatih/color": {
+            "branch": "master"
+        },
+        "github.com/rai-project/config": {
+            "branch": "master"
+        }
+    }
+}
