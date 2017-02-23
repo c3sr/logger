@@ -6,7 +6,6 @@ import (
 	"github.com/rai-project/vipertags"
 )
 
-// AWS holds common AWS credentials and keys.
 type loggerConfig struct {
 	Level string   `json:"level" config:"logger.level"`
 	Hooks []string `json:"hooks" config:"logger.hooks" default:'["syslog"]'`
@@ -17,7 +16,7 @@ var (
 )
 
 func (loggerConfig) ConfigName() string {
-	return "AWS"
+	return "Logger"
 }
 
 func (loggerConfig) SetDefaults() {
@@ -32,7 +31,7 @@ func (c loggerConfig) String() string {
 }
 
 func (c loggerConfig) Debug() {
-	Debug("AWS Config = ", c)
+	Debug("Logger Config = ", c)
 }
 
 func init() {
