@@ -20,8 +20,6 @@ var (
 func setupHooks(log *Logger) {
 	for _, hook := range Config.Hooks {
 		switch hook {
-		case "kenisis":
-			setupKenisisHook(log)
 		case "syslog":
 			setupSyslogHook(log)
 		}
