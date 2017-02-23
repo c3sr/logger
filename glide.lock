@@ -1,5 +1,5 @@
 hash: be6f7302433ddd20f71139e672c3adfd348c81214b70ee98d699ed780d378ba3
-updated: 2017-02-22T18:35:18.98923241-06:00
+updated: 2017-02-22T18:43:42.363374573-06:00
 imports:
 - name: github.com/fatih/color
   version: 7824417a424b65227be8ac9b14d545a7f3e6c3f0
@@ -39,11 +39,11 @@ imports:
 - name: github.com/pelletier/go-toml
   version: 22139eb5469018e7374b3e7ef653de37ffb44f72
 - name: github.com/rai-project/config
-  version: 011efcd9cdd5fe1d995773919da5a07e020d37c3
+  version: f837bb33aa99c7321b648aad4dbaf72959fe5e6f
 - name: github.com/rai-project/godotenv
   version: 726cc8b906e3d31c70a9671c90a13716a8d3f50d
 - name: github.com/rai-project/vipertags
-  version: 997637b503048b1f8d2a1126ff497db620632608
+  version: c4cab707247985d21c72ba3342a25440949e02bf
 - name: github.com/Sirupsen/logrus
   version: c078b1e43f58d563c74cebe63c85789e76ddb627
   subpackages:
