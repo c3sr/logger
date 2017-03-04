@@ -8,6 +8,7 @@ import (
 	"github.com/fatih/color"
 
 	"github.com/rai-project/config"
+	"github.com/spf13/viper"
 )
 
 type MutexWrap struct {
@@ -30,11 +31,12 @@ type MutexWrap struct {
 func New() *Logger {
 	l := log.New()
 	formatter := &log.TextFormatter{
-		DisableColors:    color.NoColor,
-		ForceColors:      !color.NoColor,
+		DisableColors:    !viper.GetBool("color"),
+		ForceColors:      viper.GetBool("color"),
 		DisableTimestamp: true,
 	}
 	l.Formatter = formatter
+	l.Out = color.Output
 	if config.IsVerbose {
 		log.SetLevel(log.DebugLevel)
 	} else {

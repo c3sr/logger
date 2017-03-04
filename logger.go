@@ -3,6 +3,7 @@ package logger
 import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/fatih/color"
+	"github.com/spf13/viper"
 
 	"github.com/rai-project/config"
 )
@@ -29,11 +30,12 @@ func setupHooks(log *Logger) {
 func init() {
 	config.OnInit(func() {
 		formatter := &log.TextFormatter{
-			DisableColors:    color.NoColor,
-			ForceColors:      !color.NoColor,
+			DisableColors:    !viper.GetBool("color"),
+			ForceColors:      viper.GetBool("color"),
 			DisableTimestamp: true,
 		}
 		log.SetFormatter(formatter)
+		log.SetOutput(color.Output)
 		std.Formatter = formatter
 
 		if config.IsVerbose {
