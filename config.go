@@ -7,8 +7,9 @@ import (
 )
 
 type loggerConfig struct {
-	Level string   `json:"level" config:"logger.level"`
-	Hooks []string `json:"hooks" config:"logger.hooks" default:'["syslog"]'`
+	Level      string   `json:"level" config:"logger.level"`
+	Stacktrace bool     `json:"stack_trace" config:"logger.stack_trace" default:"true"`
+	Hooks      []string `json:"hooks" config:"logger.hooks" default:'["syslog"]'`
 }
 
 var (

@@ -1,7 +1,7 @@
 package logger
 
 import (
-	log "github.com/Sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/fatih/color"
 	"github.com/spf13/viper"
 
@@ -9,7 +9,7 @@ import (
 )
 
 type Logger struct {
-	*log.Logger
+	*logrus.Logger
 	mu MutexWrap
 }
 
@@ -19,6 +19,10 @@ var (
 )
 
 func setupHooks(log *Logger) {
+	if Config.Stacktrace && log.Level >= logrus.DebugLevel {
+		log.Hooks.Add(StandardStackHook())
+	}
+
 	for _, hook := range Config.Hooks {
 		switch hook {
 		case "syslog":
@@ -29,32 +33,33 @@ func setupHooks(log *Logger) {
 
 func init() {
 	config.OnInit(func() {
-		formatter := &log.TextFormatter{
+		formatter := &logrus.TextFormatter{
 			DisableColors:    !viper.GetBool("color"),
 			ForceColors:      viper.GetBool("color"),
+			DisableSorting:   true,
 			DisableTimestamp: true,
 		}
-		log.SetFormatter(formatter)
-		log.SetOutput(color.Output)
+		logrus.SetFormatter(formatter)
+		logrus.SetOutput(color.Output)
 		std.Formatter = formatter
 
 		if config.IsVerbose {
-			log.SetLevel(log.DebugLevel)
-			std.Level = log.DebugLevel
+			logrus.SetLevel(logrus.DebugLevel)
+			std.Level = logrus.DebugLevel
 		} else if config.IsDebug {
-			log.SetLevel(log.DebugLevel)
-			std.Level = log.DebugLevel
+			logrus.SetLevel(logrus.DebugLevel)
+			std.Level = logrus.DebugLevel
 		} else {
-			log.SetLevel(log.InfoLevel)
-			std.Level = log.InfoLevel
+			logrus.SetLevel(logrus.InfoLevel)
+			std.Level = logrus.InfoLevel
 		}
 
-		if lvl, err := log.ParseLevel(Config.Level); err == nil {
-			log.SetLevel(lvl)
+		if lvl, err := logrus.ParseLevel(Config.Level); err == nil {
+			logrus.SetLevel(lvl)
 			std.Level = lvl
 		}
 
-		setupHooks(&Logger{Logger: log.StandardLogger()})
+		setupHooks(&Logger{Logger: logrus.StandardLogger()})
 		setupHooks(std)
 	})
 }
