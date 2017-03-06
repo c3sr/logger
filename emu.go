@@ -6,6 +6,9 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/fatih/color"
+	colorable "github.com/mattn/go-colorable"
+
+	"os"
 
 	"github.com/rai-project/config"
 	"github.com/spf13/viper"
@@ -38,6 +41,9 @@ func New() *Logger {
 	}
 	l.Formatter = formatter
 	l.Out = color.Output
+	if !viper.GetBool("app.color") {
+		l.Out = colorable.NewNonColorable(os.Stdout)
+	}
 	if config.IsVerbose {
 		l.Level = logrus.DebugLevel
 	} else {
