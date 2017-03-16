@@ -23,12 +23,8 @@ func setupHooks(log *Logger) {
 		log.Hooks.Add(StandardStackHook())
 	}
 
-	for _, hook := range Config.Hooks {
-		switch hook {
-		case "syslog":
-			setupSyslogHook(log)
-		}
-	}
+	//for _, hook := range Config.Hooks {
+	//}
 }
 
 func init() {

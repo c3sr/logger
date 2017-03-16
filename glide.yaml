@@ -4,13 +4,18 @@ import:
   version: ~0.11.5
   subpackages:
   - hooks/syslog
+- package: github.com/evalphobia/logrus_kinesis
 - package: github.com/facebookgo/stack
 - package: github.com/fatih/color
-  version: ~1.4.0
+  version: ~1.4.1
 - package: github.com/k0kubun/pp
   version: ~2.3.0
+- package: github.com/knq/sdhook
 - package: github.com/mattn/go-colorable
   version: ~0.0.7
+- package: github.com/pkg/errors
+  version: ~0.8.0
 - package: github.com/rai-project/config
 - package: github.com/rai-project/vipertags
 - package: github.com/spf13/viper
+- package: github.com/wercker/journalhook
