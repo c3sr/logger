@@ -7,24 +7,32 @@ import (
 )
 
 type loggerConfig struct {
-	Level      string   `json:"level" config:"logger.level"`
-	Stacktrace bool     `json:"stack_trace" config:"logger.stack_trace" default:"true"`
-	Hooks      []string `json:"hooks" config:"logger.hooks" default:'[]'`
+	Level      string        `json:"level" config:"logger.level"`
+	Stacktrace bool          `json:"stack_trace" config:"logger.stack_trace" default:"true"`
+	Hooks      []string      `json:"hooks" config:"logger.hooks" default:'[]'`
+	done       chan struct{} `json:"-" config:"-"`
 }
 
 var (
-	Config = &loggerConfig{}
+	Config = &loggerConfig{
+		done: make(chan struct{}),
+	}
 )
 
 func (loggerConfig) ConfigName() string {
 	return "Logger"
 }
 
-func (loggerConfig) SetDefaults() {
+func (a *loggerConfig) SetDefaults() {
+	vipertags.SetDefaults(a)
 }
 
 func (a *loggerConfig) Read() {
 	vipertags.Fill(a)
+}
+
+func (c loggerConfig) Wait() {
+	<-c.done
 }
 
 func (c loggerConfig) String() string {
