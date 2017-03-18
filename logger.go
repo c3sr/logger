@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/rai-project/config"
+	"github.com/rai-project/logger"
 )
 
 type Logger struct {
@@ -18,8 +19,17 @@ var (
 	std   = New()
 )
 
+func UsingHook(s string) bool {
+	for _, h := range logger.Config.Hooks {
+		if h == s {
+			return true
+		}
+	}
+	return false
+}
+
 func setupHooks(log *Logger) {
-	if Config.Stacktrace && log.Level >= logrus.DebugLevel {
+	if UsingHook("stacktrace") && log.Level >= logrus.DebugLevel {
 		log.Hooks.Add(StandardStackHook())
 	}
 	for _, h := range hooks.data {
