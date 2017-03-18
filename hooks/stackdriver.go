@@ -8,7 +8,19 @@ import (
 )
 
 func init() {
-	config.AfterInit(func() {
+	config.OnInit(func() {
+		logger.Config.Wait()
+		found := false
+		for _, h := range logger.Config.Hooks {
+			if h == "stackdriver" {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return
+		}
+
 		googlecloud.Config.Wait()
 
 		opts := googlecloud.NewOptions()

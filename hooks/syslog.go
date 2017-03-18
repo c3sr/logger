@@ -11,7 +11,19 @@ import (
 )
 
 func init() {
-	config.AfterInit(func() {
+	config.OnInit(func() {
+		logger.Config.Wait()
+		found := false
+		for _, h := range logger.Config.Hooks {
+			if h == "syslog" {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return
+		}
+
 		h, err := logrus_syslog.NewSyslogHook("udp", "localhost:514", syslog.LOG_DEBUG, "")
 		if err != nil {
 			return

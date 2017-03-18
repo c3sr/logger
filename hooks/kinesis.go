@@ -1,7 +1,6 @@
 package hooks
 
 import (
-	"github.com/apex/log/handlers/kinesis"
 	"github.com/evalphobia/logrus_kinesis"
 	"github.com/rai-project/aws"
 	"github.com/rai-project/config"
@@ -10,19 +9,27 @@ import (
 
 func init() {
 	config.OnInit(func() {
+		logger.Config.Wait()
+		found := false
+		for _, h := range logger.Config.Hooks {
+			if h == "kinesis" {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return
+		}
+
 		aws.Config.Wait()
 
-		sess, err := aws.NewSession()
+		c, err := aws.NewConfig()
 		if err != nil {
 			return
 		}
-		svc := kinesis.New(sess)
-		h := &logrus_kinesis.KinesisHook{
-			client:            svc,
-			defaultStreamName: name,
-			levels:            defaultLevels,
-			ignoreFields:      make(map[string]struct{}),
-			filters:           make(map[string]func(interface{}) interface{}),
+		h, err := logrus_kinesis.NewWithAWSConfig(config.App.Name, c)
+		if err != nil {
+			return
 		}
 		logger.RegisterHook("kinesis", h)
 	})
