@@ -28,6 +28,7 @@ func (a *loggerConfig) SetDefaults() {
 }
 
 func (a *loggerConfig) Read() {
+	defer close(a.done)
 	vipertags.Fill(a)
 }
 

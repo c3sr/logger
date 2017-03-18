@@ -22,9 +22,9 @@ func setupHooks(log *Logger) {
 	if Config.Stacktrace && log.Level >= logrus.DebugLevel {
 		log.Hooks.Add(StandardStackHook())
 	}
-
-	//for _, hook := range Config.Hooks {
-	//}
+	for _, h := range hooks.data {
+		log.Hooks.Add(h)
+	}
 }
 
 func init() {

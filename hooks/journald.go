@@ -9,7 +9,7 @@ import (
 )
 
 func init() {
-	config.AfterInit(func() {
+	config.OnInit(func() {
 		h := &journalhook.JournalHook{}
 		logger.RegisterHook("journald", h)
 	})
