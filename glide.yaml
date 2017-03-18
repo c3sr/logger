@@ -15,7 +15,9 @@ import:
   version: ~0.0.7
 - package: github.com/pkg/errors
   version: ~0.8.0
+- package: github.com/rai-project/aws
 - package: github.com/rai-project/config
+- package: github.com/rai-project/googlecloud
 - package: github.com/rai-project/vipertags
 - package: github.com/spf13/viper
 - package: github.com/wercker/journalhook
