@@ -6,7 +6,6 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/rai-project/config"
-	"github.com/rai-project/logger"
 )
 
 type Logger struct {
@@ -20,7 +19,7 @@ var (
 )
 
 func UsingHook(s string) bool {
-	for _, h := range logger.Config.Hooks {
+	for _, h := range Config.Hooks {
 		if h == s {
 			return true
 		}
