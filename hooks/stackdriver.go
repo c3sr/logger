@@ -21,8 +21,10 @@ func init() {
 
 		h, err := sdhook.New(
 			sdhook.GoogleLoggingAgent(),
+			sdhook.ProjectID(opts.ProjectID),
 			sdhook.GoogleServiceAccountCredentialsJSON(opts.Bytes()),
 			sdhook.ErrorReportingService(config.App.Name),
+			sdhook.ErrorReportingLogName("error_log"),
 		)
 		if err != nil {
 			return
