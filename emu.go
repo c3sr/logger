@@ -5,10 +5,6 @@ import (
 	"sync"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/fatih/color"
-	colorable "github.com/mattn/go-colorable"
-
-	"os"
 
 	"github.com/rai-project/config"
 	"github.com/spf13/viper"
@@ -33,17 +29,18 @@ type MutexWrap struct {
 // It's recommended to make this a global instance called `logrus`.
 func New() *Logger {
 	l := logrus.New()
+	colorMode := config.App.Color || viper.GetBool("app.color")
 	formatter := &logrus.TextFormatter{
-		DisableColors:    !viper.GetBool("color"),
-		ForceColors:      viper.GetBool("color"),
+		DisableColors:    !colorMode,
+		ForceColors:      colorMode,
 		DisableSorting:   true,
-		DisableTimestamp: true,
+		DisableTimestamp: false,
 	}
 	l.Formatter = formatter
-	l.Out = color.Output
-	if !viper.GetBool("app.color") {
-		l.Out = colorable.NewNonColorable(os.Stdout)
-	}
+	//l.Out = color.Output
+	//if !viper.GetBool("app.color") {
+	//	l.Out = colorable.NewNonColorable(os.Stdout)
+	//}
 	if config.IsVerbose {
 		l.Level = logrus.DebugLevel
 	} else {

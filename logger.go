@@ -2,7 +2,6 @@ package logger
 
 import (
 	"github.com/Sirupsen/logrus"
-	"github.com/fatih/color"
 	"github.com/spf13/viper"
 
 	"github.com/rai-project/config"
@@ -38,14 +37,17 @@ func setupHooks(log *Logger) {
 
 func init() {
 	config.OnInit(func() {
+		config.App.Wait()
+
+		colorMode := config.App.Color || viper.GetBool("app.color")
 		formatter := &logrus.TextFormatter{
-			DisableColors:    !viper.GetBool("color"),
-			ForceColors:      viper.GetBool("color"),
+			DisableColors:    !colorMode,
+			ForceColors:      colorMode,
 			DisableSorting:   true,
-			DisableTimestamp: true,
+			DisableTimestamp: false,
 		}
 		logrus.SetFormatter(formatter)
-		logrus.SetOutput(color.Output)
+		//logrus.SetOutput(color.Output)
 		std.Formatter = formatter
 
 		if config.IsVerbose {
