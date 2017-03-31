@@ -1,6 +1,7 @@
 package hooks
 
 import (
+	"github.com/k0kubun/pp"
 	"github.com/knq/sdhook"
 	"github.com/rai-project/config"
 	"github.com/rai-project/googlecloud"
@@ -27,6 +28,7 @@ func init() {
 			sdhook.ErrorReportingLogName("error_log"),
 		)
 		if err != nil {
+			pp.Println(err)
 			return
 		}
 		logger.RegisterHook("stackdriver", h)
