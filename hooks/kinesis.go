@@ -40,7 +40,6 @@ func init() {
 			println("failed to load kinesis logger hook ", err)
 			return
 		}
-		h.Async()
 		h.SetLevels([]logrus.Level{
 			logrus.PanicLevel,
 			logrus.FatalLevel,
