@@ -7,7 +7,7 @@ import (
 )
 
 type loggerConfig struct {
-	Level string        `json:"level" config:"logger.level"`
+	Level string        `json:"level" config:"logger.level" default:"info"`
 	Hooks []string      `json:"hooks" config:"logger.hooks" default:'[]'`
 	done  chan struct{} `json:"-" config:"-"`
 }

@@ -1,6 +1,8 @@
 package hooks
 
 import (
+	"fmt"
+
 	"github.com/Sirupsen/logrus"
 	aaws "github.com/aws/aws-sdk-go/aws"
 	"github.com/evalphobia/logrus_kinesis"
@@ -37,7 +39,7 @@ func init() {
 			Endpoint:  aaws.StringValue(c.Endpoint),
 		})
 		if err != nil {
-			println("failed to load kinesis logger hook ", err)
+			fmt.Println("failed to load kinesis logger hook ", err)
 			return
 		}
 		h.SetLevels([]logrus.Level{

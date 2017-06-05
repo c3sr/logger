@@ -53,12 +53,15 @@ func init() {
 		if config.IsVerbose {
 			logrus.SetLevel(logrus.DebugLevel)
 			std.Level = logrus.DebugLevel
+			Config.Level = "debug"
 		} else if config.IsDebug {
 			logrus.SetLevel(logrus.DebugLevel)
 			std.Level = logrus.DebugLevel
+			Config.Level = "debug"
 		} else {
 			logrus.SetLevel(logrus.InfoLevel)
 			std.Level = logrus.InfoLevel
+			Config.Level = "info"
 		}
 
 		if lvl, err := logrus.ParseLevel(Config.Level); err == nil {
