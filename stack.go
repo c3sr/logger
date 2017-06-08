@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/facebookgo/stack"
 	"github.com/fatih/color"
 )
@@ -65,7 +65,7 @@ func (hook StackHook) Fire(entry *logrus.Entry) error {
 	// certain hoops. e.g. http handler in a separate package.
 	// This is a workaround.
 	for _, frame := range _frames {
-		if !strings.Contains(frame.File, "github.com/Sirupsen/logrus") {
+		if !strings.Contains(frame.File, "github.com/sirupsen/logrus") {
 			frames = append(frames, frame)
 		}
 	}

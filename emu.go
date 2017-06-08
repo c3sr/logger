@@ -4,7 +4,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 
 	"github.com/rai-project/config"
 	"github.com/spf13/viper"

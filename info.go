@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 )
 
 // returns file and line two stack frames above its invocation

@@ -3,7 +3,7 @@ package hooks
 import (
 	"fmt"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	aaws "github.com/aws/aws-sdk-go/aws"
 	"github.com/evalphobia/logrus_kinesis"
 	"github.com/rai-project/aws"

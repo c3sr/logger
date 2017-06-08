@@ -3,7 +3,7 @@ package hooks
 import (
 	"fmt"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/evalphobia/logrus_fluent"
 	"github.com/rai-project/config"
 	"github.com/rai-project/logger"
