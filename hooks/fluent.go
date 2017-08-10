@@ -1,12 +1,14 @@
+// +build disabled
+
 package hooks
 
 import (
 	"fmt"
 
-	"github.com/sirupsen/logrus"
 	"github.com/evalphobia/logrus_fluent"
 	"github.com/rai-project/config"
 	"github.com/rai-project/logger"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
 
@@ -27,7 +29,7 @@ func init() {
 		h, err := logrus_fluent.New(host, port)
 		if err != nil {
 			fmt.Println("failed to load fluent logger hook ", err)
-      return
+			return
 		}
 
 		for _, tag := range tags {

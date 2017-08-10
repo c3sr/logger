@@ -1,14 +1,16 @@
+// +build disabled
+
 package hooks
 
 import (
 	"fmt"
 
-	"github.com/sirupsen/logrus"
 	aaws "github.com/aws/aws-sdk-go/aws"
 	"github.com/evalphobia/logrus_kinesis"
 	"github.com/rai-project/aws"
 	"github.com/rai-project/config"
 	"github.com/rai-project/logger"
+	"github.com/sirupsen/logrus"
 )
 
 func init() {
