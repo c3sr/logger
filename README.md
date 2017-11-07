@@ -2,6 +2,7 @@
 
 ## Config
 
+example
 
 ~~~
 log:
@@ -9,4 +10,7 @@ log:
   hooks:
     - kenisis
     - syslog
+    - logz
+logz:
+  token: LOGZ_TOKEN
 ~~~
