@@ -9,8 +9,6 @@ import (
 	"github.com/rai-project/logger"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
-	"gopkg.in/olivere/elastic.v5"
-	"gopkg.in/sohlich/elogrus.v2"
 )
 
 func init() {

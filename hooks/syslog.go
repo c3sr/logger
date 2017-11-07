@@ -5,9 +5,9 @@ package hooks
 import (
 	"log/syslog"
 
-	logrus_syslog "github.com/sirupsen/logrus/hooks/syslog"
 	"github.com/rai-project/config"
 	"github.com/rai-project/logger"
+	logrus_syslog "github.com/sirupsen/logrus/hooks/syslog"
 )
 
 func init() {
