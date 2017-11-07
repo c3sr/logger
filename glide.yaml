@@ -26,6 +26,7 @@ import:
 - package: github.com/sebest/logrusly
 - package: github.com/spf13/viper
 - package: github.com/wercker/journalhook
+- package: github.com/bshuster-repo/logruzio
 - package: gopkg.in/olivere/elastic.v5
   version: ~5.0.39
 - package: gopkg.in/sohlich/elogrus.v2
