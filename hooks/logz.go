@@ -12,14 +12,12 @@ import (
 
 func init() {
 	config.OnInit(func() {
+		config.App.Wait()
 		logger.Config.Wait()
 
 		if !logger.UsingHook("logz") {
 			return
 		}
-
-		config.App.Wait()
-		logger.Config.Wait()
 
 		token := viper.GetString("logz.token")
 
