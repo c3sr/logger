@@ -20,17 +20,16 @@ func init() {
 			return
 		}
 
-		token := viper.GetString("logz.token")
-
+		token := decrypt(viper.GetString("logz.token"))
 
 		ctx := logrus.Fields{
 			"ID":        config.App.Name,
 			"Version":   config.App.Version.Version,
 			"BuildDate": config.App.Version.BuildDate,
 		}
-        if hostname, err := os.Hostname(); err == nil {
-            ctx["HostName"] = hostname
-        }
+		if hostname, err := os.Hostname(); err == nil {
+			ctx["HostName"] = hostname
+		}
 		hook, err := logruzio.New(token, config.App.Name, ctx)
 		if err != nil {
 			fmt.Println("cannot register logz hook ", err)
