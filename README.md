@@ -5,7 +5,7 @@
 example
 
 ~~~
-log:
+logger:
   level: debug
   hooks:
     - kenisis
