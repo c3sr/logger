@@ -3,10 +3,11 @@ package hooks
 import (
 	"fmt"
 	"os"
+	"time"
 
-	"github.com/bshuster-repo/logruzio"
 	"github.com/rai-project/config"
 	"github.com/rai-project/logger"
+	"github.com/rai-project/logger/hooks/logruzio"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
@@ -30,7 +31,7 @@ func init() {
 		if hostname, err := os.Hostname(); err == nil {
 			ctx["HostName"] = hostname
 		}
-		hook, err := logruzio.New(token, config.App.Name, ctx)
+		hook, err := logruzio.New(token, config.App.Name, 5*time.Minute, ctx)
 		if err != nil {
 			fmt.Println("cannot register logz hook ", err)
 			return
