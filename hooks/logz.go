@@ -22,6 +22,9 @@ func init() {
 		}
 
 		token := decrypt(viper.GetString("logz.token"))
+		if token == "" {
+			return
+		}
 
 		ctx := logrus.Fields{
 			"ID":        config.App.Name,

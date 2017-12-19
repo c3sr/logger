@@ -39,8 +39,8 @@ type Hook struct {
 func New(token string, appName string, ttl time.Duration, ctx logrus.Fields) (*Hook, error) {
 	h := &Hook{Context: logrus.Fields{}, token: token, ttl: ttl}
 
-	h.Context["app"] = appName
-	h.Context["meta"] = ctx
+	h.Context["App"] = appName
+	h.Context["Meta"] = ctx
 	h.Formatter = &SimpleFormatter{}
 
 	return h, nil
