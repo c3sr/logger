@@ -26,7 +26,7 @@ func init() {
 
 		port := decrypt(viper.GetString("graylog.port"))
 		if port == "" {
-			port = "9000"
+			port = "12201"
 		}
 
 		ctx := map[string]interface{}{
