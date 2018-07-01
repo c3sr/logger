@@ -459,6 +459,12 @@
   version = "v1.1.0"
 
 [[projects]]
+  name = "gopkg.in/gemnasium/logrus-graylog-hook.v2"
+  packages = ["."]
+  revision = "c4a7de647eaaac00ffea599b7773e5e6804fa3b7"
+  version = "v2.0.7"
+
+[[projects]]
   name = "gopkg.in/yaml.v2"
   packages = ["."]
   revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
@@ -467,6 +473,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "804fe622c2730bff31b29dd69e1f7cfb0235019344c16149b6e9b5d5be91987c"
+  inputs-digest = "b9504ee19a9e0dc8cbef0a98144573117224a853899d0afe1deb3ee627a9c6eb"
   solver-name = "gps-cdcl"
   solver-version = 1
