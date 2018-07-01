@@ -93,6 +93,10 @@
   branch = "master"
   name = "github.com/wercker/journalhook"
 
+[[constraint]]
+  branch = "master"
+  name = "gopkg.in/gemnasium/logrus-graylog-hook.v2"
+
 [prune]
   go-tests = true
   unused-packages = true
