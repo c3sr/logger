@@ -11,6 +11,10 @@ logger:
     - kenisis
     - syslog
     - logz
+    - graylog
 logz:
   token: LOGZ_TOKEN
+graylog:
+   address: ...
+   port: 12201
 ~~~
