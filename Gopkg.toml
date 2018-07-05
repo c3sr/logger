@@ -100,3 +100,7 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "gopkg.in/gemnasium/logrus-airbrake-hook.v3"
+  revision = "cb25691e43299559827ffb285b0bb5626b722fa7"

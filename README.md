@@ -4,7 +4,7 @@
 
 example
 
-~~~
+```
 logger:
   level: debug
   hooks:
@@ -12,9 +12,13 @@ logger:
     - syslog
     - logz
     - graylog
+    - airbrake
 logz:
   token: LOGZ_TOKEN
 graylog:
    address: ...
    port: 12201
-~~~
+airbrake:
+   id: ...
+   api_key: ...
+```

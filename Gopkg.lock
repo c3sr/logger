@@ -20,6 +20,15 @@
   version = "v1"
 
 [[projects]]
+  name = "github.com/airbrake/gobrake"
+  packages = [
+    ".",
+    "internal/lrucache"
+  ]
+  revision = "46cf8d6b67a66a18e50a082ebcf684756e262d6c"
+  version = "v3.6.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/armon/consul-api"
   packages = ["."]
@@ -459,6 +468,11 @@
   version = "v1.1.0"
 
 [[projects]]
+  name = "gopkg.in/gemnasium/logrus-airbrake-hook.v3"
+  packages = ["."]
+  revision = "cb25691e43299559827ffb285b0bb5626b722fa7"
+
+[[projects]]
   name = "gopkg.in/gemnasium/logrus-graylog-hook.v2"
   packages = ["."]
   revision = "c4a7de647eaaac00ffea599b7773e5e6804fa3b7"
@@ -473,6 +487,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b9504ee19a9e0dc8cbef0a98144573117224a853899d0afe1deb3ee627a9c6eb"
+  inputs-digest = "8ffd6f9385c128d3db955fa0c44eb7408b825c7142cfbe0671fe1d0c5748ed86"
   solver-name = "gps-cdcl"
   solver-version = 1
