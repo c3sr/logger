@@ -26,22 +26,14 @@
 
 
 [[constraint]]
-  name = "github.com/aws/aws-sdk-go"
-  version = "1.14.10"
-
-[[constraint]]
   name = "github.com/evalphobia/logrus_fluent"
   version = "0.4.0"
-
-[[constraint]]
-  name = "github.com/evalphobia/logrus_kinesis"
-  version = "0.2.0"
 
 [[constraint]]
   branch = "master"
   name = "github.com/facebookgo/stack"
 
-[[constraint]]
+[[override]]
   name = "github.com/fatih/color"
   version = "1.7.0"
 
@@ -50,24 +42,12 @@
   version = "2.3.0"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/knq/sdhook"
-
-[[constraint]]
   name = "github.com/pkg/errors"
   version = "0.8.0"
 
 [[constraint]]
   branch = "master"
-  name = "github.com/rai-project/aws"
-
-[[constraint]]
-  branch = "master"
   name = "github.com/rai-project/config"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/rai-project/googlecloud"
 
 [[constraint]]
   branch = "master"
@@ -83,7 +63,7 @@
 
 [[constraint]]
   name = "github.com/sirupsen/logrus"
-  version = "1.0.5"
+  version = "1.4.1"
 
 [[constraint]]
   branch = "master"

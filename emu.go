@@ -41,8 +41,9 @@ func New() *Logger {
 	//if !viper.GetBool("app.color") {
 	//	l.Out = colorable.NewNonColorable(os.Stdout)
 	//}
-	if config.IsVerbose {
+	if config.IsVerbose || config.IsDebug {
 		l.Level = logrus.DebugLevel
+		l.ReportCaller = true
 	} else {
 		l.Level = logrus.WarnLevel
 	}

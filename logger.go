@@ -54,10 +54,12 @@ func init() {
 			logrus.SetLevel(logrus.DebugLevel)
 			std.Level = logrus.DebugLevel
 			Config.Level = "debug"
+			logrus.SetReportCaller(true)
 		} else if config.IsDebug {
 			logrus.SetLevel(logrus.DebugLevel)
 			std.Level = logrus.DebugLevel
 			Config.Level = "debug"
+			logrus.SetReportCaller(true)
 		} else {
 			logrus.SetLevel(logrus.InfoLevel)
 			std.Level = logrus.InfoLevel
