@@ -4,7 +4,7 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 gazelle(
     name = "gazelle",
     external = "vendored",
-    prefix = "github.com/rai-project/config",
+    prefix = "github.com/c3sr/config",
 )
 
 go_library(
@@ -20,7 +20,7 @@ go_library(
         "utils.go",
         "version.go",
     ],
-    importpath = "github.com/rai-project/config",
+    importpath = "github.com/c3sr/config",
     visibility = ["//visibility:public"],
     deps = [
         "@com_github_fatih_color//:go_default_library",
@@ -47,7 +47,7 @@ go_test(
         "config_test.go",
     ],
     embed = [":go_default_library"],
-    importpath = "github.com/rai-project/config",
+    importpath = "github.com/c3sr/config",
     deps = [
         "@com_github_geertjohan_go_rice//:go_default_library",
         "@com_github_geertjohan_go_sourcepath//:go_default_library",

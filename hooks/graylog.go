@@ -3,9 +3,9 @@ package hooks
 import (
 	"os"
 
-	"github.com/rai-project/config"
-	"github.com/rai-project/logger"
-	"github.com/rai-project/utils"
+	"github.com/c3sr/config"
+	"github.com/c3sr/logger"
+	"github.com/c3sr/utils"
 	"github.com/spf13/viper"
 	"gopkg.in/gemnasium/logrus-graylog-hook.v2"
 )

@@ -4,7 +4,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 
-	"github.com/rai-project/config"
+	"github.com/c3sr/config"
 )
 
 type Logger struct {

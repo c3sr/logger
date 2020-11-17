@@ -3,8 +3,8 @@ package hooks
 import (
 	"strings"
 
-	"github.com/rai-project/config"
-	"github.com/rai-project/utils"
+	"github.com/c3sr/config"
+	"github.com/c3sr/utils"
 )
 
 func decrypt(s string) string {
