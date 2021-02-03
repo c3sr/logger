@@ -58,28 +58,28 @@
   version = "v0.0.3"
 
 [[projects]]
-  digest = "1:8d62fd5a89337105cd0e5d54ee7c8b04b9b32f2c11757397fd4519655d1500f7"
+  digest = "0:"
   name = "github.com/c3sr/config"
   packages = ["."]
   pruneopts = "UT"
-  revision = "65ee284dba7b2246b139da2f408675c920e363dc"
-  version = "v0.0.1"
+  revision = "35ed8e2450bf72580413486a801a469faeb04189"
+  version = "v0.1.0"
 
 [[projects]]
-  digest = "1:88cfdb95989b3626f4208e5dde90f50e4e6f73d0b660cbdd40f4be51308e6b7e"
+  digest = "0:"
   name = "github.com/c3sr/utils"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0a5cfc0b7876ff195155e42edea01fd21f63c752"
-  version = "v0.0.1"
+  revision = "8c94d0bf9baa1095effd041da69653e1103b68c7"
+  version = "v0.1.0"
 
 [[projects]]
-  digest = "1:dd8b975c503629a05cab671d1f025cebe4c2d8cf97250cb8104f59295b5c35aa"
+  digest = "0:"
   name = "github.com/c3sr/vipertags"
   packages = ["."]
   pruneopts = "UT"
-  revision = "fae3cc10fd16cda495d8be4cf857e1016099f737"
-  version = "v0.0.1"
+  revision = "b8a9fd68c520fe07ffbf7f642b7e73eac2a0434f"
+  version = "v0.1.0"
 
 [[projects]]
   digest = "1:f438d91be142877c3ad83157992c91de787ddfbddcc2a7da1ef6ef61606cadc4"
